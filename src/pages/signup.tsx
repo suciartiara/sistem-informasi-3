@@ -8,12 +8,15 @@ import {
   IonInput,
   IonButton,
   IonItem,
-  IonText,
+  IonLabel,
+  IonToast,
   IonIcon,
   IonCard,
   IonCardContent,
-  IonLabel,
-  IonToast,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonImg,
 } from "@ionic/react";
 import { mailOutline, lockClosedOutline, personOutline } from "ionicons/icons";
 import { useHistory } from "react-router-dom";
@@ -22,11 +25,11 @@ import { auth } from "../firebase";
 import "../styles/signup.css";
 
 const SignUp: React.FC = () => {
-  const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [confirmPassword, setConfirmPassword] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
+  const [name, setName] = useState<string>("");
   const [showToast, setShowToast] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string>("");
   const history = useHistory();
@@ -39,99 +42,107 @@ const SignUp: React.FC = () => {
 
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      setToastMessage("Sign up successful!");
+      setToastMessage("Account created successfully!");
       setShowToast(true);
-      history.push("/login");
-    } catch (err: any) {
-      setError("Error: " + err.message);
+      setTimeout(() => {
+        history.push("/login");
+      }, 1500);
+    } catch (error) {
+      setToastMessage("Error creating account. Please try again.");
+      setShowToast(true);
     }
   };
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar color="primary">
-          <IonTitle className="ion-text-center">Academy Sign Up</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <IonContent className="ion-padding sign-up-content">
+        <IonGrid className="signup-grid">
+          <IonRow>
+            <IonCol size="12" sizeMd="6" className="image-column">
+              <IonImg
+                src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Signup Image"
+                className="signup-image"
+              />
+            </IonCol>
 
-      <IonContent className="ion-padding">
-        <div className="signup-container">
-          <IonCard className="signup-card">
-            <IonCardContent>
-              <div className="ion-text-center">
-                <h2>Create a New Account</h2>
+            <IonCol size="12" sizeMd="6">
+              <div className="header-container">
+                <h2 className="ion-no-margin title">Sign Up</h2>
+                <p className="subtitle">Create an account to get started</p>
               </div>
 
-              <IonItem lines="none">
-                <IonIcon icon={personOutline} slot="start" />
-                <IonInput
-                  type="text"
-                  value={name}
-                  placeholder="Enter your full name"
-                  onIonChange={(e) => setName(e.detail.value!)}
-                />
-              </IonItem>
+              <IonCard className="signup-card">
+                <IonCardContent>
+                  <IonItem lines="none" className="input-container">
+                    <IonIcon icon={personOutline} slot="start" />
+                    <IonInput
+                      placeholder="Enter your full name"
+                      value={name}
+                      onIonChange={(e) => setName(e.detail.value!)}
+                      className="input-field"
+                    />
+                  </IonItem>
 
-              <IonItem lines="none">
-                <IonIcon icon={mailOutline} slot="start" />
-                <IonInput
-                  type="email"
-                  value={email}
-                  placeholder="Enter your email"
-                  onIonChange={(e) => setEmail(e.detail.value!)}
-                />
-              </IonItem>
+                  <IonItem lines="none" className="input-container">
+                    <IonIcon icon={mailOutline} slot="start" />
+                    <IonInput
+                      type="email"
+                      placeholder="Enter your email"
+                      value={email}
+                      onIonChange={(e) => setEmail(e.detail.value!)}
+                      className="input-field"
+                    />
+                  </IonItem>
 
-              <IonItem lines="none">
-                <IonIcon icon={lockClosedOutline} slot="start" />
-                <IonInput
-                  type="password"
-                  value={password}
-                  placeholder="Enter your password"
-                  onIonChange={(e) => setPassword(e.detail.value!)}
-                />
-              </IonItem>
+                  <IonItem lines="none" className="input-container">
+                    <IonIcon icon={lockClosedOutline} slot="start" />
+                    <IonInput
+                      type="password"
+                      placeholder="Enter your password"
+                      value={password}
+                      onIonChange={(e) => setPassword(e.detail.value!)}
+                      className="input-field"
+                    />
+                  </IonItem>
 
-              <IonItem lines="none">
-                <IonIcon icon={lockClosedOutline} slot="start" />
-                <IonInput
-                  type="password"
-                  value={confirmPassword}
-                  placeholder="Confirm your password"
-                  onIonChange={(e) => setConfirmPassword(e.detail.value!)}
-                />
-              </IonItem>
+                  <IonItem lines="none" className="input-container">
+                    <IonIcon icon={lockClosedOutline} slot="start" />
+                    <IonInput
+                      type="password"
+                      placeholder="Confirm your password"
+                      value={confirmPassword}
+                      onIonChange={(e) => setPassword(e.detail.value!)}
+                      className="input-field"
+                    />
+                  </IonItem>
 
-              {error && (
-                <IonText color="danger" className="ion-padding-start">
-                  <p>{error}</p>
-                </IonText>
-              )}
+                  <div className="button-container">
+                    <IonButton
+                      expand="block"
+                      onClick={handleSignUp}
+                      color="primary"
+                    >
+                      Sign Up
+                    </IonButton>
+                  </div>
+                </IonCardContent>
+              </IonCard>
 
-              <IonButton
-                expand="block"
-                onClick={handleSignUp}
-                color="primary"
-                className="signup-button"
-              >
-                Sign Up
-              </IonButton>
-
-              <div className="ion-text-center">
-                <IonText color="medium">
-                  Already have an account?{" "}
-                  <span
-                    onClick={() => history.push("/login")}
-                    className="login-link"
-                  >
-                    Login
-                  </span>
-                </IonText>
+              <div className="login-link">
+                <p>Already have an account?</p>
+                <IonButton
+                  fill="clear"
+                  size="small"
+                  color="primary"
+                  onClick={() => history.push("/login")}
+                >
+                  Log In
+                </IonButton>
               </div>
-            </IonCardContent>
-          </IonCard>
-        </div>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
 
         <IonToast
           isOpen={showToast}

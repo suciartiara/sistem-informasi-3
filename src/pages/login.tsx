@@ -8,14 +8,23 @@ import {
   IonInput,
   IonButton,
   IonItem,
-  IonText,
+  IonLabel,
   IonToast,
   IonIcon,
   IonCard,
   IonCardContent,
-  IonLabel,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonImg,
+  IonText,
 } from "@ionic/react";
-import { logoGoogle, mailOutline, lockClosedOutline } from "ionicons/icons";
+import {
+  logoGoogle,
+  mailOutline,
+  lockClosedOutline,
+  personOutline,
+} from "ionicons/icons";
 import { useHistory } from "react-router-dom";
 import {
   signInWithEmailAndPassword,
@@ -23,7 +32,7 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 import { auth } from "../firebase";
-import "../styles/Home.css";
+import "../styles/login.css";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState<string>("");
@@ -33,11 +42,13 @@ const Login: React.FC = () => {
   const [toastMessage, setToastMessage] = useState<string>("");
   const history = useHistory();
 
-  const handleSignIn = async () => {
+  const handleLogin = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       setToastMessage("Sign in successful!");
-      setShowToast(true);
+      setTimeout(() => {
+        setShowToast(true);
+      }, 1500);
       history.push("/home");
     } catch (err: any) {
       setError("Error: " + err.message);
@@ -58,83 +69,87 @@ const Login: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar color="primary">
-          <IonTitle className="ion-text-center">Academy Login</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-
-      <IonContent className="ion-padding">
-        <div className="login-container">
-          <IonCard className="login-card">
-            <IonCardContent>
-              <div className="ion-text-center">
-                <h2>Login to Your Account</h2>
+      <IonContent className="ion-padding login-content">
+        <IonGrid className="login-grid">
+          <IonRow>
+            <IonCol size="12" sizeMd="6">
+              <div className="header-container">
+                <h2 className="ion-no-margin title">Login</h2>
+                <p className="subtitle">Login to Your Account</p>
               </div>
 
-              <IonItem lines="none">
-                <IonIcon icon={mailOutline} slot="start" />
-                <IonInput
-                  type="email"
-                  value={email}
-                  placeholder="Enter your email"
-                  onIonChange={(e) => setEmail(e.detail.value!)}
-                />
-              </IonItem>
+              <IonCard className="login-card">
+                <IonCardContent>
+                  <IonItem lines="none" className="input-container">
+                    <IonIcon icon={mailOutline} slot="start" />
+                    <IonInput
+                      type="email"
+                      placeholder="Enter your email"
+                      value={email}
+                      onIonChange={(e) => setEmail(e.detail.value!)}
+                      className="input-field"
+                    />
+                  </IonItem>
 
-              <IonItem lines="none">
-                <IonIcon icon={lockClosedOutline} slot="start" />
-                <IonInput
-                  type="password"
-                  value={password}
-                  placeholder="Enter your password"
-                  onIonChange={(e) => setPassword(e.detail.value!)}
-                />
-              </IonItem>
+                  <IonItem lines="none" className="input-container">
+                    <IonIcon icon={lockClosedOutline} slot="start" />
+                    <IonInput
+                      type="password"
+                      placeholder="Enter your password"
+                      value={password}
+                      onIonChange={(e) => setPassword(e.detail.value!)}
+                      className="input-field"
+                    />
+                  </IonItem>
 
-              {error && (
-                <IonText color="danger" className="ion-padding-start">
-                  <p>{error}</p>
-                </IonText>
-              )}
+                  <div className="button-container">
+                    <IonButton
+                      expand="block"
+                      onClick={handleLogin}
+                      color="primary"
+                    >
+                      Login
+                    </IonButton>
+                  </div>
 
-              <IonButton
-                expand="block"
-                onClick={handleSignIn}
-                color="primary"
-                className="login-button"
-              >
-                Sign In
-              </IonButton>
+                  <div className="ion-text-center">
+                    <IonText color="medium">or login with</IonText>
+                  </div>
 
-              <div className="ion-text-center">
-                <IonText color="medium">or sign in with</IonText>
-              </div>
-
-              <IonButton
-                expand="block"
-                onClick={handleGoogleSignIn}
-                color="secondary"
-                className="google-button"
-              >
-                <IonIcon slot="start" icon={logoGoogle} />
-                Sign in with Google
-              </IonButton>
-
-              <div className="ion-text-center">
-                <IonText color="medium">
-                  Don't have an account?{" "}
-                  <span
-                    onClick={() => history.push("/signup")}
-                    className="signup-link"
+                  <IonButton
+                    expand="block"
+                    onClick={handleGoogleSignIn}
+                    color="secondary"
+                    className="google-button"
                   >
-                    Sign Up
-                  </span>
-                </IonText>
+                    <IonIcon slot="start" icon={logoGoogle} />
+                    Login with Google
+                  </IonButton>
+                </IonCardContent>
+              </IonCard>
+
+              <div className="login-link">
+                <p>Don't have an account?</p>
+                <IonButton
+                  fill="clear"
+                  size="small"
+                  color="primary"
+                  onClick={() => history.push("/signup")}
+                >
+                  Sign Up
+                </IonButton>
               </div>
-            </IonCardContent>
-          </IonCard>
-        </div>
+            </IonCol>
+
+            <IonCol size="20" sizeMd="6" className="image-column">
+              <IonImg
+                src="https://images.unsplash.com/photo-1472653525502-fc569e405a74?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="LoginImage"
+                className="login-image"
+              />
+            </IonCol>
+          </IonRow>
+        </IonGrid>
 
         <IonToast
           isOpen={showToast}
