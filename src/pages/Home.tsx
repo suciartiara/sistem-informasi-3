@@ -7,6 +7,8 @@ const Home: React.FC = () => {
   return (
 
     <IonPage>
+
+
       {/* Navbar */}
       <IonHeader>
        <Navbar />
@@ -17,18 +19,12 @@ const Home: React.FC = () => {
         <IonHeader collapse="condense">
         </IonHeader>
         <Konten/>
-      </IonContent>
 
-      <IonFooter>
-      <IonToolbar className="ion-padding-horizontal">
-        <IonTitle size="small">
-          <IonText color="dark">
-            &copy; <b>Kelompok 3</b>
-          </IonText>
-        </IonTitle>
-      </IonToolbar>
-    </IonFooter>
-    </IonPage>
+        
+      </IonContent>
+     
+
+     </IonPage>
 
     
   );
