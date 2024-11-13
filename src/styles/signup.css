@@ -1,5 +1,3 @@
-/* SignUp.css */
-
 .sign-up-content {
   --background: #f5f5f5;
 }
@@ -66,14 +64,14 @@
   text-align: center;
 }
 
-.login-link {
+.signup-link {
   text-align: center;
   color: #2f4b26;
   font-size: 14px;
   padding-top: 10px;
 }
 
-.login-link IonButton {
+.signup-link IonButton {
   font-weight: bold;
   padding: 0;
   color: #3e885b;
@@ -83,6 +81,11 @@
   .signup-grid {
     display: flex;
     flex-direction: column;
+  }
+
+  .image-column {
+    padding: 10px;
+    align-items: center;
   }
 
   .sigup-card {
