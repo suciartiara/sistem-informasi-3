@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import Login from "./pages/login";
 import SignUp from "./pages/signup";
 import FocusPage from './pages/FocusPage';
+import Contact from './pages/Contact';
+
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -38,6 +40,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/FocusPage">
           <FocusPage />
+        </Route>
+        <Route exact path="/Contact">
+          <Contact />
         </Route>
         <Route exact path="/">
           <Redirect to="/home" />
