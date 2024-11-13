@@ -1,0 +1,148 @@
+.focus-content {
+    padding: 16px;
+    background-color: #ffffff
+  }
+  
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #004d40;
+    margin-bottom: 8px;
+    margin-left: 45px;
+  }
+  
+  .section-paragraph {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 16px;
+    column-count: 2;
+    column-gap: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+  
+  .program-objectives,
+  .impact-section,
+  .program-details,
+  .partnership-section {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .section-subtitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00695c;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  .impact-icons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  
+  .impact-icons div {
+    width: 20%;
+    margin-bottom: 16px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .impact-icons img {
+    width: 60px;
+    height: auto; 
+    max-width: 100%; 
+    margin-bottom: 8px;
+  }
+
+  .impact-icons p {
+    font-size: 14px;
+    color: #333;
+    margin-top: 8px;
+  }
+  
+  .program-objectives ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #333;
+}
+
+.partnership-section {
+    background-color: #004d40;
+    padding: 24px;
+    border-radius: 8px;
+    color: white;
+  }
+  .partnership-title {
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    color: #a8d5ba;
+  }
+
+  .partnership-text {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #ffffff;
+    margin-bottom: 24px;
+    text-align: justify;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .partnership-button {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: 8px 16px;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: none;
+  }
+
+.program-details,
+.impact-section {
+    border-top: 1px solid #e0e0e0;
+}
+
+.ioncard1 {
+  background-color: #9ecc94;
+  color: #333;
+}
+
+.ioncard2 {
+  background-color:  #9ecc94;
+  color: #333;
+}
+
+.ioncard3 {
+  background-color:  #9ecc94;
+  color: #333;
+}
+
+.ioncard4  {
+  background-color:  #9ecc94;
+  color: #333;
+}
+
+.first-row {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.section-paragraph {
+  text-align: justify;
+}
