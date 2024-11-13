@@ -2,7 +2,7 @@ import React from "react";
 import { IonFooter, IonText, IonTitle, IonToolbar } from "@ionic/react";
 import "./Footer.css";
 
-export const Footer: React.FC = () => {
+export const Kaki: React.FC = () => {
   return (
     <IonFooter>
       <IonToolbar className="ion-padding-horizontal">
@@ -16,4 +16,4 @@ export const Footer: React.FC = () => {
   );
 };
 
-export default Footer;
+export default Kaki;

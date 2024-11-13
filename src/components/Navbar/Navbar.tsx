@@ -16,19 +16,14 @@ const Navbar: React.FC = () => {
     <IonHeader>
       <IonToolbar className="navbar-toolbar">
         <IonButtons slot="start">
-          {/* <IonImg
-            src="https://www.freepik.com/icon/link_14873775#fromView=search&page=1&position=19&uuid=5dfb3667-dc6e-444f-a198-4db00d567717"
-            alt="Plantwise Logo"
-            className="navbar-logo"
-          /> */}
           <IonTitle className="navbar-title">EduFarmers</IonTitle>
         </IonButtons>
 
         <div className="navbar-links" slot="end">
-          <IonButton fill="clear" routerLink="/beranda">
+          <IonButton fill="clear" routerLink="/home">
             Beranda
           </IonButton>
-          <IonButton fill="clear" routerLink="/Fokus">
+          <IonButton fill="clear" routerLink="/FocusPage">
             Fokus Kami
           </IonButton>
           <IonButton fill="clear" routerLink="/program">
