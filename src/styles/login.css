@@ -85,8 +85,10 @@
 
   .image-column {
     order: -1;
-    padding: 10px;
+    padding: 0; /* Hapus padding agar gambar benar-benar memenuhi kolom */
+    display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   .login-card {

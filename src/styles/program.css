@@ -1,0 +1,170 @@
+/* Kontainer Utama */
+html, body, .program-container {
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+    height: 100%;
+    overflow-x: hidden; /* Menghindari scroll horizontal */
+    overflow-y: auto; /* Pastikan halaman dapat di-scroll */
+}
+
+/* Navbar */
+ion-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+/* Hero Section dengan Background Image */
+.program-hero {
+    position: relative;
+    height: 613px;
+    background-image: url('https://www.edufarmers.org/cfind/source/thumb/images/foto-google/cover_w2161_h690_tw4012_th1279_x120_y1485_20221122_042511381_ios.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    margin-top: 56px;
+}
+
+.program-hero .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 64, 51, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Posisi teks mulai dari kiri */
+    text-align: left;
+    padding: 0 350px; /* Menambahkan jarak kiri dan kanan */
+}
+
+.subheading {
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    color: #CCDEDB;
+    text-transform: uppercase;
+    line-height: 1.4;
+    font-weight: 700;
+    margin-bottom: 30px; /* Menambah jarak antara subheading dan judul */
+}
+
+.hero-title {
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    max-width: 800px;
+}
+
+/* Konten Utama */
+.program-content {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #ffffff;
+    padding-top: 100px;
+}
+
+.content-wrapper {
+    max-width: 900px;
+    text-align: left;
+    line-height: 1.6;
+    width: 50%;
+}
+
+.content-title {
+    font-size: 2rem;
+    color: #00594C;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.content-subheading {
+    font-size: 1rem;
+    line-height: 1.4;
+    letter-spacing: 4px;
+    color: #00A68D;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.content-text {
+    font-size: 1.125rem;
+    color: rgba(0, 53, 46, 0.8);
+    line-height: 1.75;
+    font-weight: 500;
+    margin-top: 20px;
+    max-width: 800px;
+}
+
+.program-goals {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #00594C; /* Warna background hijau gelap */
+    color: #ffffff;
+    padding: 60px 20px;
+}
+
+.program-goals .image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.program-goals .image-wrapper img {
+    width: 550px;
+    height: 412px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.program-goals .text-wrapper {
+    flex: 1;
+    padding-left: 20px;
+    max-width: 600px;
+}
+
+.program-goals .text-wrapper h3 {
+    font-size: 1.25rem; /* Sesuaikan ukuran font */
+    text-transform: uppercase; /* Mengubah teks menjadi huruf kapital */
+    letter-spacing: 4px; /* Menambah jarak antar huruf */
+    color: #ffffff; /* Warna yang cocok dengan desain */
+    font-weight: 700; /* Membuat teks lebih tebal */
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.program-goals .text-wrapper ul {
+    list-style: none;
+    padding: 0;
+}
+
+.program-goals .text-wrapper ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.program-goals .text-wrapper ul li img.icon {
+    width: 48px; /* Ukuran ikon */
+    height: 48px; /* Ukuran ikon */
+    margin-right: 35px; /* Jarak antara ikon dan teks */
+}

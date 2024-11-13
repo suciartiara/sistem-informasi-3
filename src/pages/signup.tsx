@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import {
   IonPage,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
   IonContent,
   IonInput,
   IonButton,
   IonItem,
-  IonLabel,
-  IonToast,
   IonIcon,
+  IonToast,
   IonCard,
   IonCardContent,
   IonGrid,
@@ -22,6 +18,8 @@ import { mailOutline, lockClosedOutline, personOutline } from "ionicons/icons";
 import { useHistory } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../firebase";
 import "../styles/signup.css";
 
 const SignUp: React.FC = () => {
@@ -35,13 +33,25 @@ const SignUp: React.FC = () => {
   const history = useHistory();
 
   const handleSignUp = async () => {
+    setError(null);
+
     if (password !== confirmPassword) {
       setError("Passwords do not match!");
+      setToastMessage("Passwords do not match!");
+      setShowToast(true);
       return;
     }
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+
+      await saveUserData(user.uid, name, email);
+
       setToastMessage("Account created successfully!");
       setShowToast(true);
       setTimeout(() => {
@@ -50,6 +60,19 @@ const SignUp: React.FC = () => {
     } catch (error) {
       setToastMessage("Error creating account. Please try again.");
       setShowToast(true);
+      console.error("Error creating account:", error);
+    }
+  };
+
+  const saveUserData = async (userId: string, name: string, email: string) => {
+    try {
+      await setDoc(doc(db, "users", userId), {
+        name: name,
+        email: email,
+        createdAt: new Date(),
+      });
+    } catch (error) {
+      console.error("Error saving user data:", error);
     }
   };
 
@@ -112,7 +135,7 @@ const SignUp: React.FC = () => {
                       type="password"
                       placeholder="Confirm your password"
                       value={confirmPassword}
-                      onIonChange={(e) => setPassword(e.detail.value!)}
+                      onIonChange={(e) => setConfirmPassword(e.detail.value!)}
                       className="input-field"
                     />
                   </IonItem>
@@ -150,7 +173,7 @@ const SignUp: React.FC = () => {
           message={toastMessage}
           duration={1500}
           color="success"
-          position="bottom"
+          position="top"
         />
       </IonContent>
     </IonPage>
