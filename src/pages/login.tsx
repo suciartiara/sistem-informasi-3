@@ -157,7 +157,7 @@ const Login: React.FC = () => {
           message={toastMessage}
           duration={1500}
           color="success"
-          position="bottom"
+          position="top"
         />
       </IonContent>
     </IonPage>
