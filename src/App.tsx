@@ -4,6 +4,7 @@ import { IonReactRouter } from "@ionic/react-router";
 import Home from "./pages/Home";
 import Login from "./pages/login";
 import SignUp from "./pages/signup";
+import ProgramPage from "./pages/program"; // Tambahkan import ProgramPage
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -20,6 +21,7 @@ import "@ionic/react/css/flex-utils.css";
 import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
+
 setupIonicReact();
 
 const App: React.FC = () => (
@@ -34,6 +36,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/signup">
           <SignUp />
+        </Route>
+        <Route exact path="/program">
+          <ProgramPage /> 
         </Route>
         <Route exact path="/">
           <Redirect to="/home" />
