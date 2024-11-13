@@ -1,8 +1,8 @@
-import './ExploreContainer.css';
+import './Konten.css';
 
-interface ContainerProps { }
+interface Konten { }
 
-const ExploreContainer: React.FC<ContainerProps> = () => {
+const Konten: React.FC<Konten> = () => {
   return (
     <div id="container">
       <strong>Ready to create an app?</strong>
@@ -11,4 +11,4 @@ const ExploreContainer: React.FC<ContainerProps> = () => {
   );
 };
 
-export default ExploreContainer;
+export default Konten;

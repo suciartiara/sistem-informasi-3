@@ -1,24 +1,36 @@
-import {IonContent,IonHeader,IonPage,IonTitle,IonToolbar} from "@ionic/react";
-import ExploreContainer from "../components/ExploreContainer";
+import {IonContent,IonHeader,IonPage,IonTitle,IonToolbar, IonFooter, IonText} from "@ionic/react";
+import Konten from "../components/Konten";
+import Navbar from "../components/Navbar";
 import "../styles/Home.css";
 
 const Home: React.FC = () => {
   return (
+
     <IonPage>
+      {/* Navbar */}
       <IonHeader>
-        <IonToolbar>
-          <IonTitle>Blank</IonTitle>
-        </IonToolbar>
+       <Navbar />
       </IonHeader>
+
+      {/* Konten */}
       <IonContent fullscreen>
         <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Blank</IonTitle>
-          </IonToolbar>
         </IonHeader>
-        <ExploreContainer />
+        <Konten/>
       </IonContent>
+
+      <IonFooter>
+      <IonToolbar className="ion-padding-horizontal">
+        <IonTitle size="small">
+          <IonText color="dark">
+            &copy; <b>Kelompok 3</b>
+          </IonText>
+        </IonTitle>
+      </IonToolbar>
+    </IonFooter>
     </IonPage>
+
+    
   );
 };
 
