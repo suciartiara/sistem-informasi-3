@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
             alt="Plantwise Logo"
             className="navbar-logo"
           /> */}
-          <IonTitle className="navbar-title">Nama Website</IonTitle>
+          <IonTitle className="navbar-title">EduFarmers</IonTitle>
         </IonButtons>
 
         <div className="navbar-links" slot="end">
