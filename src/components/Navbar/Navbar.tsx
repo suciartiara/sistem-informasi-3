@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
           <IonButton fill="clear" routerLink="/program">
             Program Kami
           </IonButton>
-          <IonButton fill="clear" routerLink="/contact">
+          <IonButton fill="clear" routerLink="/Contact">
             Contact
           </IonButton>
           <IonButtons>
