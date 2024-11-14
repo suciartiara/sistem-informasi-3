@@ -1,5 +1,5 @@
 import React from "react";
-import Kaki from "./Footer";
+import Footer from "../Footer/Footer";
 import {
   IonPage,
   IonHeader,
@@ -28,13 +28,13 @@ const Konten: React.FC = () => {
         <IonImg
           src="/image1.png"
           className="focus-banner-image"
-          style={{ marginBottom: "80px" }}
+          style={{ marginBottom: "8px" }}
         />
 
         <IonGrid className="focus-content">
           <section>
             {/* Info 1 */}
-            <section style={{ padding: "20px", marginTop: "40px" }}>
+            <section style={{ padding: "20px", marginTop: "8px" }}>
               <IonRow
                 className="program-objectives"
                 style={{ color: "white", padding: "40px" }}
@@ -70,7 +70,7 @@ const Konten: React.FC = () => {
                   <IonText
                     style={{
                       fontWeight: "300",
-                      fontSize: "2em",
+                      fontSize: "1.5em",
                       marginBottom: "1px",
                       color: "#2f4b26",
                       letterSpacing: "2px",
@@ -84,7 +84,7 @@ const Konten: React.FC = () => {
                       marginBottom: "1rem",
                       color: "#2f4b26",
                       marginRight: "40px",
-                      fontSize: "20px",
+                      fontSize: "16px",
                       letterSpacing: "2px",
                     }}
                   >
@@ -98,7 +98,7 @@ const Konten: React.FC = () => {
                       </p>
                     </IonText>
                     <div className="button-container">
-                      <IonButton routerLink="/Contact" className="tombol">
+                      <IonButton routerLink="/home" className="tombol">
                         Selengkapnya
                       </IonButton>
                     </div>
@@ -137,7 +137,7 @@ const Konten: React.FC = () => {
                   <IonText
                     style={{
                       fontWeight: "300",
-                      fontSize: "2em",
+                      fontSize: "1.5em",
                       marginBottom: "1px",
                       color: "#2f4b26",
                       letterSpacing: "2px",
@@ -151,7 +151,7 @@ const Konten: React.FC = () => {
                       marginBottom: "1rem",
                       color: "#2f4b26",
                       marginRight: "40px",
-                      fontSize: "20px",
+                      fontSize: "16px",
                       letterSpacing: "2px",
                     }}
                   >
@@ -164,7 +164,7 @@ const Konten: React.FC = () => {
                         activities.
                       </p>
                       <div className="button-container">
-                        <IonButton routerLink="/Contact" className="tombol">
+                        <IonButton routerLink="/focus" className="tombol">
                           Selengkapnya
                         </IonButton>
                       </div>
@@ -205,10 +205,10 @@ const Konten: React.FC = () => {
                   </IonText>
                   <IonCardTitle
                     style={{
-                      marginTop: "10px",
+                      marginTop: "30px",
                       fontWeight: "600",
                       color: "#2f4b26",
-                      fontSize: "2em",
+                      fontSize: "1.5em",
                     }}
                   >
                     Google.org Project
@@ -225,7 +225,7 @@ const Konten: React.FC = () => {
                     textAlign: "center",
                   }}
                 >
-                  <IonCol size="6" style={{ textAlign: "center" }}>
+                  <IonCol size="12" style={{ textAlign: "center" }}>
                     <IonCard className="ioncard1">
                       <IonCardHeader>
                         <img
@@ -268,9 +268,9 @@ const Konten: React.FC = () => {
                       </IonCardContent>
                       <div className="button-container">
                         <IonButton
-                          routerLink="/Contact"
+                          routerLink="/program"
                           className="tombol"
-                          style={{ marginBottom: "30px" }}
+                          style={{ marginBottom: "30px", marginRight: "40px" }}
                         >
                           Selengkapnya
                         </IonButton>
@@ -282,7 +282,7 @@ const Konten: React.FC = () => {
             </section>
           </section>
         </IonGrid>
-        <Kaki />
+        <Footer />
       </IonContent>
     </IonPage>
   );

@@ -22,7 +22,7 @@
 
 .navbar-links {
   display: flex;
-  gap: 16px;
+  gap: 10px;
 }
 
 .navbar-links ion-button {
@@ -33,7 +33,6 @@
 .login-button {
   background-color: #c0d7bb;
   color: white;
-  padding: 4px 8px;
   border-radius: 10px;
   font-size: 0.8rem;
 }
@@ -41,7 +40,6 @@
 .signup-button {
   background-color: #2f4b26;
   color: white;
-  padding: 4px 8px;
   border-radius: 10px;
   font-size: 0.8rem;
 }

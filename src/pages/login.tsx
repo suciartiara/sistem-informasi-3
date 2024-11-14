@@ -102,15 +102,14 @@ const Login: React.FC = () => {
                     />
                   </IonItem>
 
-                  <div className="button-container">
-                    <IonButton
-                      expand="block"
-                      onClick={handleLogin}
-                      color="primary"
-                    >
-                      Login
-                    </IonButton>
-                  </div>
+                  <IonButton
+                    expand="block"
+                    onClick={handleLogin}
+                    color="primary"
+                    className="button-container"
+                  >
+                    Login
+                  </IonButton>
 
                   <div className="ion-text-center">
                     <IonText color="medium">or login with</IonText>

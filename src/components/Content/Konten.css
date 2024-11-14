@@ -1,3 +1,7 @@
 .tombol {
-    color: #3e885b;
+  color: #3e885b;
+}
+
+button-container {
+  align-items: right;
 }

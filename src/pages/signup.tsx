@@ -140,15 +140,13 @@ const SignUp: React.FC = () => {
                     />
                   </IonItem>
 
-                  <div className="button-container">
-                    <IonButton
-                      expand="block"
-                      onClick={handleSignUp}
-                      color="primary"
-                    >
-                      Sign Up
-                    </IonButton>
-                  </div>
+                  <IonButton
+                    expand="block"
+                    onClick={handleSignUp}
+                    color="primary"
+                  >
+                    Sign Up
+                  </IonButton>
                 </IonCardContent>
               </IonCard>
 

@@ -21,19 +21,20 @@ const Navbar: React.FC = () => {
 
         <div className="navbar-links" slot="end">
           <IonButton fill="clear" routerLink="/home">
-            Beranda
+            Home
           </IonButton>
-          <IonButton fill="clear" routerLink="/FocusPage">
+          <IonButton fill="clear" routerLink="/focus">
             Fokus Kami
           </IonButton>
           <IonButton fill="clear" routerLink="/program">
             Program Kami
           </IonButton>
-          <IonButton fill="clear" routerLink="/Contact">
+          <IonButton fill="clear" routerLink="/contact">
             Contact
           </IonButton>
           <IonButtons>
             <IonButton
+              fill="clear"
               color="dark"
               routerLink="/login"
               className="login-button"
