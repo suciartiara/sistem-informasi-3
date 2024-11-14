@@ -5,9 +5,6 @@ import {
   IonTitle,
   IonButtons,
   IonButton,
-  IonMenuButton,
-  IonContent,
-  IonImg,
 } from "@ionic/react";
 import "./Navbar.css";
 

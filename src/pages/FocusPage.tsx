@@ -2,8 +2,6 @@ import React from "react";
 import {
   IonPage,
   IonHeader,
-  IonToolbar,
-  IonTitle,
   IonContent,
   IonImg,
   IonText,
@@ -14,14 +12,11 @@ import {
   IonCard,
   IonCardContent,
   IonCardHeader,
-  IonCardSubtitle,
   IonCardTitle,
-  IonIcon,
 } from "@ionic/react";
 import "../styles/FocusPage.css";
-import { IonItem, IonLabel, IonList } from "@ionic/react";
 import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
+import Footer from "../components/Footer/footer";
 
 const FocusPage: React.FC = () => {
   return (

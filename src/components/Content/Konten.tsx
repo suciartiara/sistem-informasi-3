@@ -1,10 +1,7 @@
 import React from "react";
-import Footer from "../Footer/Footer";
+import Footer from "../Footer/footer";
 import {
   IonPage,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
   IonContent,
   IonImg,
   IonText,
@@ -15,11 +12,8 @@ import {
   IonCard,
   IonCardContent,
   IonCardHeader,
-  IonCardSubtitle,
   IonCardTitle,
-  IonIcon,
-} from "@ionic/react";
-import { IonItem, IonLabel, IonList } from "@ionic/react";
+} from "@ionic/react"
 
 const Konten: React.FC = () => {
   return (

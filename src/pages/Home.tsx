@@ -2,10 +2,6 @@ import {
   IonContent,
   IonHeader,
   IonPage,
-  IonTitle,
-  IonToolbar,
-  IonFooter,
-  IonText,
 } from "@ionic/react";
 import Konten from "../components/Content/Konten";
 import Navbar from "../components/Navbar/Navbar";

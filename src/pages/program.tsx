@@ -3,13 +3,10 @@ import {
   IonGrid,
   IonRow,
   IonCol,
-  IonCard,
-  IonCardContent,
-  IonCardTitle,
   IonText,
   IonImg,
 } from "@ionic/react";
-import Footer from "../components/Footer/Footer";
+import Footer from "../components/Footer/footer";
 import Navbar from "../components/Navbar/Navbar";
 import "../styles/program.css";
 

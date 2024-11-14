@@ -16,7 +16,7 @@ import { arrowForward } from "ionicons/icons";
 import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../firebase";
 import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
+import Footer from "../components/Footer/footer";
 import "../styles/Contact.css";
 
 const Contact: React.FC = () => {
